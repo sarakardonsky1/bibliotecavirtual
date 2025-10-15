@@ -217,7 +217,7 @@ public class Main {
                     if (l == null) System.out.println("⚠ No existe ese libro.");
                     else usuarioActual.quitarFavorito(l);
                 }
-                case 4 -> { /* volver */ }
+                case 4 -> {  }
                 default -> System.out.println("⚠ Opción inválida.");
             }
         } while (op != 4);
