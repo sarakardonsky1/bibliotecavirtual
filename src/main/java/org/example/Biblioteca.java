@@ -38,11 +38,11 @@ public class Biblioteca {
 
     public void agregarLibro(String titulo, String autor) {
         if (titulo == null || titulo.isBlank() || autor == null || autor.isBlank()) {
-            System.out.println("⚠ Título y autor no pueden estar vacíos.");
+            System.out.println("Título y autor no pueden estar vacíos.");
             return;
         }
         libros.add(new Libro(titulo, autor));
-        System.out.println("📚 Libro agregado: \"" + titulo + "\" — " + autor);
+        System.out.println("Libro agregado: \"" + titulo + "\" — " + autor);
     }
 
     public void eliminarLibro(String titulo) {
@@ -51,11 +51,11 @@ public class Biblioteca {
             Libro l = it.next();
             if (l.getTitulo().equalsIgnoreCase(titulo)) {
                 it.remove();
-                System.out.println("🗑 Libro eliminado: " + titulo);
+                System.out.println("Libro eliminado: " + titulo);
                 return;
             }
         }
-        System.out.println("⚠ No se encontró el libro: " + titulo);
+        System.out.println("No se encontró el libro: " + titulo);
     }
 
     public Libro buscarLibroPorTitulo(String titulo) {
@@ -107,11 +107,11 @@ public class Biblioteca {
 
     public void agregarSugerenciaGlobal(String titulo) {
         if (titulo == null || titulo.isBlank()) {
-            System.out.println("⚠ La sugerencia no puede ser vacía.");
+            System.out.println("La sugerencia no puede ser vacía.");
             return;
         }
         bandejaSugerencias.add(titulo.trim());
-        System.out.println("📥 Sugerencia enviada a la bandeja de admin.");
+        System.out.println("Sugerencia enviada a la bandeja de admin.");
     }
 
     public void verBandejaSugerencias() {
@@ -127,20 +127,21 @@ public class Biblioteca {
 
     public void aprobarSugerencia(int indice, String autor) {
         if (indice < 1 || indice > bandejaSugerencias.size()) {
-            System.out.println("⚠ Índice inválido.");
+            System.out.println("Índice inválido.");
             return;
         }
         String titulo = bandejaSugerencias.remove(indice - 1);
         agregarLibro(titulo, autor == null || autor.isBlank() ? "Autor desconocido" : autor);
-        System.out.println("✅ Sugerencia aprobada y agregada: " + titulo);
+        System.out.println("Sugerencia aprobada y agregada: " + titulo);
     }
 
     public void rechazarSugerencia(int indice) {
         if (indice < 1 || indice > bandejaSugerencias.size()) {
-            System.out.println("⚠ Índice inválido.");
+            System.out.println("Índice inválido.");
             return;
         }
         String t = bandejaSugerencias.remove(indice - 1);
-        System.out.println("🗑 Sugerencia rechazada: " + t);
+        System.out.println("Sugerencia rechazada: " + t);
     }
 }
+
