@@ -12,7 +12,7 @@ public class Main {
 
     private static Usuario usuarioActual = null;
 
-    static void main() {
+    public static void main(String []args) {
         int op;
         do {
             mostrarMenuPrincipal();
